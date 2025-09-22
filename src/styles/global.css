@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+
+@theme {
+    --color-custom-cream: #FFFBEB;
+    --color-custom-pastel-yellow: #FEF7C3;
+    --color-custom-soft-amber: #FDE68A;
+    --color-custom-charcoal: #383838;
+    --color-custom-slate-gray: #5A5A5A;
+    --color-custom-pale-yellow: #FDF4D7;
+}
+
+/*
+Fundo Principal	Creme
+Cards / Fundo Secundário	
+Destaque / Hover	
+Texto Principal	Carvão	
+Texto Secundário	
+Bordas / Divisores
+*/
