@@ -1,0 +1,54 @@
+---
+import '../styles/global.css'
+
+interface Props {
+	title: string;
+	description: string;
+	image?: string;
+}
+
+const { title, description, image = "/default_social_image.png" }:Props = Astro.props; // se a página não passar uma imagem específica, usa a imagem default 'default-social-image.png' 
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site); // cria um url canônico para a página específica (https://www.meusite.com.br)
+const imageURL = new URL(image, Astro.site);
+---
+
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+
+		{/* define o ícone do site */}
+		<link rel="icon" type="image/png" href="/nanda_flores_placeholder_icon.png" />
+
+		{/* a meta tag generator serve para definir a versão atual do Astro. Astro.generator retorna algo como “Astro v4.0.0” */}
+		<meta name="generator" content={Astro.generator} />
+
+		{/* tags de descrição e título da página, que vem das props. */}
+		<title>{title}</title>
+		<meta name="description" content={description} />
+
+		{/* meta-tag que define a url canônica da página atual, ela diz ao google que o canonicalURL é a url oficial da página atual, juntando qualquer variação www., https:, http: em uma versão única final que vai ser mostrada nos resultados das buscas “https://www.meu-website.com.br” */}
+		<link rel="canonical" href={canonicalURL} />
+
+		{/* meta-tags que definem como a página vai aparecer quando compartilhada em redes sociais, aquele pequeno blob com titulo, foto, link, etc. */}
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:image" content={imageURL} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Nanda Flores" /> 
+		<meta property="og:locale" content="pt_BR" /> 
+		
+		{/* meta-tags que definem como a página vai aparecer quando compartilhada no twitter, aquele pequeno blob com titulo, foto, link, etc. */}
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:url" content={canonicalURL} />
+		<meta name="twitter:image" content={imageURL} />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

@@ -1,0 +1,11 @@
+# 'User-agent: *' significa que as regras abaixo valem para TODOS os robôs.
+User-agent: * 
+
+# O 'Disallow:' vazio significa que não está proibindo nenhuma página de ser indexada.
+Disallow: 
+
+# O 'Allow: /' reforça que todo o site pode ser acessado.
+Allow: /
+
+# aqui é informado onde está o sitemap (arquivo xml contendo todos os urls do site para o robots.txt), sem um sitemap, os robos são obrigados a seguir link por link procurando os urls.
+Sitemap: https://www.nandaflores.com.br/sitemap-index.xml
