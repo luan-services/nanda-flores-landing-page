@@ -24,7 +24,7 @@ export default function MobileMenu({ navLinks }: Props) {
         <div className="flex md:hidden">
             <button className="bg-gray-200 items-center justify-center p-2 rounded-lg active:scale-80 transition duration-300 text-gray-500 focus:outline-none border-1 border-gray-300" 
                 onClick={() => toggleMobileMenu()} type="button">
-                    H
+                    H 
             </button>
         </div>
 
