@@ -1,5 +1,6 @@
 // src/components/MobileMenu.tsx
 import { useState } from 'react';
+import { Menu } from 'lucide-react';
 
 // Definindo os tipos para as props com TypeScript
 interface NavLink {
@@ -12,19 +13,19 @@ interface Props {
 }
 
 export default function MobileMenu({ navLinks }: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    const toggleMobileMenu = () => {
+        setIsOpen(!isOpen);
+    };
 
-  return (
+    return (
         <>
         {/* Botão Hambúrguer */}
-        <div className="flex md:hidden">
-            <button className="bg-gray-200 items-center justify-center p-2 rounded-lg active:scale-80 transition duration-300 text-gray-500 focus:outline-none border-1 border-gray-300" 
+        <div className="flex md:hidden w-6">
+            <button className="items-center p-0 m-0 justify-center active:scale-80 transition duration-300 text-custom-charcoal focus:outline-none" 
                 onClick={() => toggleMobileMenu()} type="button">
-                    H 
+                    <Menu strokeWidth={2.5}/>
             </button>
         </div>
 

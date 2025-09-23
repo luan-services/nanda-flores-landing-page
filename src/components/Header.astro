@@ -3,23 +3,43 @@ import MobileMenu from './MobileMenu.tsx';
 
 const navLinks = [
 	{ href: "/", name: "Início" },
+	{ href: "/how-to-reach", name: "Como chegar" },
 	{ href: "/catalog", name: "Catálogo" },
-	{ href: "/other-services", name: "Outros Serviços" },
-	{ href: "/how-to-reach", name: "Como Chegar" },
+	{ href: "/other-services", name: "Outros serviços" },
 ];
 ---
 
-<header class="bg-custom-pale-yellow border-b border-custom-pastel-yellow shadow-sm sticky top-0 z-50">
-	<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-		<a href="/" class="text-2xl font-bold text-custom-charcoal hover:text-custom-slate-gray transition-colors">
-			Nanda Flores
-		</a>
+<header class="w-full flex justify-center">
+	<nav class="container px-2 sm:px-6 py-4 flex justify-between items-center">
 
-		<div class="hidden md:flex items-center space-x-6">
-			{navLinks.map(link => (
-				<a href={link.href} class="text-custom-slate-gray font-medium hover:text-custom-charcoal transition-colors">
-					{link.name} 
-				</a>
+		<div class="hidden md:flex items-center gap-x-6 min-w-64 justify-center lg:justify-end">
+			{navLinks.map((link, index) => (
+				index < navLinks.length / 2 ? (
+					<a href={link.href} class="text-custom-slate-gray font-medium hover:text-custom-charcoal transition-colors">
+						{link.name}
+					</a>
+				) : null
+			))}
+		</div>
+
+		{/* div p compensar o mobile menu em telas pequenas */}
+		<div class="flex md:hidden w-6"/>
+
+		<div class="flex flex-row items-center sm:gap-3 gap-1 w-full justify-center">
+			<div class="h-[1px] md:hidden lg:block mt-1 w-6 sm:w-12 bg-custom-charcoal"/>
+			<a href="/" class="text-2xl sm:text-3xl font-bold text-custom-charcoal font-playfair-serif hover:text-custom-slate-gray transition-colors">
+				Nanda Flores
+			</a>
+			<div class="h-[1px] md:hidden lg:block mt-1 w-6 sm:w-12 bg-custom-charcoal"/>
+		</div>
+
+		<div class="hidden md:flex items-center gap-x-6 min-w-64 justify-center lg:justify-start">
+			{navLinks.map((link, index) => (
+				index >= navLinks.length / 2 ? (
+					<a href={link.href} class="text-custom-slate-gray font-medium hover:text-custom-charcoal transition-colors">
+						{link.name}
+					</a>
+				) : null
 			))}
 		</div>
 
