@@ -1,12 +1,48 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import ReviewCard from "../components/home_page/ReviewCard.astro"
 
 ---
 
 <Layout title="Nanda Flores - Floricultura em Angra dos Reis - Buquês e Arranjos" description="Procurando flores em Angra dos Reis? A Nanda Flores cria buquês, arranjos e cestas para todas as ocasiões. Surpreenda quem você ama. Peça já o seu!">
-	<Header/>
-	<main class="w-full justify-center flex">
-		home
-	</main>
+	
+	{/* gradient que vem do topo da página, precisa ficar antes do header */}
+	<div class="absolute top-0 left-1/2 -translate-x-1/2 h-100 sm:h-150 w-full max-w-160 bg-gradient-to-b from-custom-soft-amber/60 to-transparent"/>
+	
+	{/* aqui, header precisa ficar dentro de uma div básica pro gradient funcionar corretamente */}
+	<div class="relative z-10">
+		<Header/>
+
+		
+		<main class="w-full justify-center flex select-none">
+			{/* hero section com girassol e texto */}			
+			<section class="w-full container flex justify-center md:justify-between">
+				<div class="hidden md:flex">
+					<ReviewCard></ReviewCard>
+				</div>
+
+				<div class="flex flex-col items-center text-center">
+					<p class="w-full font-serif text-charcoal text-3xl sm:text-5xl md:text-6xl font-bold z-10 pt-4 md:pt-16">
+						Um Paraíso de Flores<br>Perto de Você
+					</p>
+
+					<img src="/images/girassol-bg.png" alt="Buquê de Girassóis" class="w-full pointer-events-none max-w-80 sm:max-w-96 md:max-w-160 -mt-4 md:-mt-6 z-20"/>
+					
+					<div class="absolute top-5/10 z-50">
+						<a href="/catalog" class="bg-custom-pastel-yellow text-custom-charcoal font-black text-sm px-4 py-2 md:py-3 md:px-8 rounded-full hover:brightness-90 transition duration-300 border-3 border-custom-charcoal">
+							Ver Catálogo
+						</a>
+					</div>
+				</div>
+				
+				<div class="hidden md:flex">
+					<ReviewCard></ReviewCard>
+				</div>
+
+			</section>
+
+			
+		</main>
+	</div>
 </Layout>
