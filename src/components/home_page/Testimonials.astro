@@ -1,0 +1,55 @@
+---
+import { Quote , Star} from 'lucide-react';
+
+const testimonials = [
+  {
+    quote: "O buquê que encomendei para o aniversário da minha mãe era simplesmente deslumbrante! As flores estavam frescas e a montagem era uma obra de arte. Atendimento impecável!",
+    name: "Juliana S.",
+    role: "Cliente Satisfeita",
+    stars: 5,
+  },
+];
+---
+
+<div class="relative bg-white/60">
+    
+    <div class="absolute top-8 left-8 z-0 opacity-30 rotate-180 text-orange-300">
+        <Quote size={120} stroke-width={1.5} />
+    </div>
+    <div class="absolute bottom-8 right-8 z-0 opacity-30 text-orange-300">
+        <Quote size={120} stroke-width={1.5}  />
+    </div>
+
+    <div class="max-w-180 w-full px-6 relative z-10 py-16">
+        
+        <div class="text-center">
+            <p class="text-sm font-bold text-custom-slate-gray">
+                DEPOIMENTOS
+            </p>
+            <p class="font-playfair-serif font-medium text-3xl md:text-4xl text-custom-charcoal">
+                O Que Nossos <span class="text-orange-300 font-medium">Clientes Dizem</span>
+            </p>
+        </div>
+
+        {testimonials.map(item => (
+            <div class="p-8 rounded-lg flex flex-col">
+                <p class="text-custom-slate-gray italic">"{item.quote}"</p>
+                
+                <div class="flex items-center justify-between mt-6">
+                    <div>
+                    <p class="font-bold text-custom-charcoal">{item.name}</p>
+                    <p class="text-sm text-custom-slate-gray">{item.role}</p>
+                    </div>
+
+                    <div class="flex gap-1 text-yellow-400">
+                    {[0,1,2,3,4].map((num) => (
+                        num < item.stars ? 
+                        <Star fill="currentColor" size={20} /> : ''
+                    ))}
+                    </div>
+                </div>
+            </div>
+        ))}
+
+    </div>
+</div>

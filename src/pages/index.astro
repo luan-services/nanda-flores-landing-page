@@ -3,6 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import ReviewCard from "../components/home_page/ReviewCard.astro"
 
+import { Image } from 'astro:assets';
+import girassol from "../../public/images/girassol-bg.png";
+import Testimonials from '../components/home_page/Testimonials.astro';
+
 ---
 
 <Layout title="Nanda Flores - Floricultura em Angra dos Reis - Buquês e Arranjos" description="Procurando flores em Angra dos Reis? A Nanda Flores cria buquês, arranjos e cestas para todas as ocasiões. Surpreenda quem você ama. Peça já o seu!">
@@ -14,40 +18,61 @@ import ReviewCard from "../components/home_page/ReviewCard.astro"
 	<div class="relative z-10">
 		<Header/>
 
-		
-		<main class="w-full flex justify-center select-none">
+		<main class="w-full flex flex-col items-center">
 
-			<div class="hidden lg:flex container justify-between h-full lg:px-8 xl:px-16 py-78 z-50 absolute w-full">
-				<div class="flex flex-col gap-32">
-					<ReviewCard title="Flores Frescas" description="Nossas flores são colhidas constantemente para garantir que estejam frescas e na melhor qualidade."></ReviewCard>
-					<ReviewCard margin="ml-6" title="Material Sustentável" description="Nossa loja é comprometida com práticas ecológicas, desde colheita ao empacotamento dos buquês."></ReviewCard>
-				</div>
-				<div class="flex flex-col gap-48">
-					<ReviewCard margin="ml-8" title="Arranjos Artísticos" description="Criamos buquês únicos, artísticos e belos, para qualquer dia ou ocasião especial."></ReviewCard>
-					<ReviewCard title="Ouvimos os Clientes" description="Sua satisfação é nossa maior prioridade, fazemos de tudo para entregar os melhores produtos à você."></ReviewCard>
-				</div>
-			</div>
-
-			{/* hero section com girassol e texto */}			
-			<section class="w-full container flex justify-center">
-
-				<div class="flex flex-col items-center text-center">
-					<p class="w-full font-serif text-charcoal text-3xl sm:text-5xl md:text-6xl font-bold z-10 pt-4 md:pt-16">
-						Um Paraíso de Flores<br>Perto de Você
-					</p>
-
-					<img src="/images/girassol-bg.png" alt="Buquê de Girassóis" class="w-full pointer-events-none max-w-80 sm:max-w-96 md:max-w-160 -mt-4 md:-mt-6 z-20"/>
-					
-					<div class="absolute top-5/10 z-50">
-						<a href="/catalog" class="bg-custom-pastel-yellow text-custom-charcoal font-black text-sm px-4 py-2 md:py-3 md:px-8 rounded-full hover:brightness-90 transition duration-300 border-3 border-custom-charcoal">
-							Ver Catálogo
-						</a>
+			{/* hero section*/}	
+			<section class="w-full flex justify-center">
+				{/* comentários em volta da hero section*/}	
+				<div class="hidden lg:flex container justify-between lg:px-8 xl:px-16 py-78 z-50 absolute w-full select-none">
+					<div class="flex flex-col gap-32">
+						<ReviewCard title="Flores Frescas" description="Nossas flores são colhidas constantemente para garantir que estejam frescas e na melhor qualidade."></ReviewCard>
+						<ReviewCard margin="ml-6" title="Material Sustentável" description="Nossa loja é comprometida com práticas ecológicas, desde colheita ao empacotamento dos buquês."></ReviewCard>
+					</div>
+					<div class="flex flex-col gap-48">
+						<ReviewCard margin="ml-8" title="Arranjos Artísticos" description="Criamos buquês únicos, artísticos e belos, para qualquer dia ou ocasião especial."></ReviewCard>
+						<ReviewCard title="Ouvimos os Clientes" description="Sua satisfação é nossa maior prioridade, fazemos de tudo para entregar os melhores produtos à você."></ReviewCard>
 					</div>
 				</div>
 
+				{/* div do buquê */}
+				<div class="w-full container flex justify-center select-none">
+
+					<div class="flex flex-col items-center text-center">
+						<p class="w-full font-serif text-charcoal text-3xl sm:text-5xl md:text-6xl font-bold z-10 pt-4 md:pt-16">
+							Um Paraíso de Flores<br>Perto de Você
+						</p>
+
+						<Image src={girassol} alt="Buquê de Girassóis" class="w-full pointer-events-none max-w-80 sm:max-w-96 md:max-w-160 -mt-4 md:-mt-6 z-20"/>
+						
+					</div>
+				</div>
+
+				<div class="absolute top-92 md:top-148 z-50">
+					<a href="/catalog" class="bg-custom-pale-yellow text-custom-charcoal font-black text-sm px-4 py-2 md:py-3 md:px-8 rounded-full hover:brightness-90 transition duration-300 border-3 border-custom-charcoal">
+						Ver Catálogo
+					</a>
+
+				</div>
 			</section>
 
-			
+			{/* seção de comentários pro mobile */}
+			<section class="flex flex-col sm:flex-row justify-around items-center sm:items-start gap-2 lg:hidden text-center container pt-4 md:pt-8">
+				<ReviewCard title="Flores Frescas" description="Nossas flores são colhidas constantemente para garantir que estejam frescas e na melhor qualidade."></ReviewCard>
+				<ReviewCard title="Arranjos Artísticos" description="Criamos buquês únicos, artísticos e belos, para qualquer dia ou ocasião especial."></ReviewCard>
+			</section>
+
+			{/* seção chamativa */}
+			<section class="container justify-around items-center flex-col gap-2 sm:gap-0 sm:flex-row flex py-4 sm:py-16">
+				<span class="font-playfair-serif text-2xl text-center sm:text-start sm:text-4xl md:text-5xl font-bold">Descubra Nossos<br>Melhores Produtos</span>
+				<a href="/catalog" class="text-custom-slate-gray border-custom-slate-gray font-black text-sm px-4 py-2 md:py-3 md:px-8 rounded-full hover:brightness-90 transition duration-300 border-3">
+					Acesse Nosso Catálogo
+				</a>
+			</section>
+
+			{/* seção comentários dos clientes */}
+			<section class="pb-16">
+				<Testimonials/>
+			</section>
 		</main>
 	</div>
 </Layout>
