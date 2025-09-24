@@ -1,4 +1,3 @@
-// src/components/MobileMenu.tsx
 import { useState } from 'react';
 import { Menu } from 'lucide-react';
 
@@ -21,14 +20,13 @@ export default function MobileMenu({ navLinks }: Props) {
 
     return (
         <>
-        {/* Botão Hambúrguer */}
-        <div className="flex md:hidden w-6">
-            <button className="items-center p-0 m-0 justify-center active:scale-80 transition duration-300 text-custom-charcoal focus:outline-none" 
-                onClick={() => toggleMobileMenu()} type="button">
-                    <Menu strokeWidth={2.5}/>
-            </button>
-        </div>
-
+            {/* Botão Hambúrguer */}
+            <div className="flex md:hidden w-6">
+                <button className="items-center p-0 m-0 justify-center active:scale-80 transition duration-300 text-custom-charcoal focus:outline-none" 
+                    onClick={() => toggleMobileMenu()} type="button">
+                        <Menu strokeWidth={2.5}/>
+                </button>
+            </div>
 
             {/* menu backdrop */}
             {isOpen &&
@@ -57,8 +55,6 @@ export default function MobileMenu({ navLinks }: Props) {
 
                 </div>
             </div>
-
-  
         </>
     );
 }
