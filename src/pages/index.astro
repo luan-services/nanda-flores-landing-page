@@ -15,12 +15,21 @@ import ReviewCard from "../components/home_page/ReviewCard.astro"
 		<Header/>
 
 		
-		<main class="w-full justify-center flex select-none">
-			{/* hero section com girassol e texto */}			
-			<section class="w-full container flex justify-center md:justify-between">
-				<div class="hidden md:flex">
-					<ReviewCard></ReviewCard>
+		<main class="w-full flex justify-center select-none">
+
+			<div class="hidden lg:flex container justify-between h-full lg:px-8 xl:px-16 py-78 z-50 absolute w-full">
+				<div class="flex flex-col gap-32">
+					<ReviewCard title="Flores Frescas" description="Nossas flores são colhidas constantemente para garantir que estejam frescas e na melhor qualidade."></ReviewCard>
+					<ReviewCard margin="ml-6" title="Material Sustentável" description="Nossa loja é comprometida com práticas ecológicas, desde colheita ao empacotamento dos buquês."></ReviewCard>
 				</div>
+				<div class="flex flex-col gap-48">
+					<ReviewCard margin="ml-8" title="Arranjos Artísticos" description="Criamos buquês únicos, artísticos e belos, para qualquer dia ou ocasião especial."></ReviewCard>
+					<ReviewCard title="Ouvimos os Clientes" description="Sua satisfação é nossa maior prioridade, fazemos de tudo para entregar os melhores produtos à você."></ReviewCard>
+				</div>
+			</div>
+
+			{/* hero section com girassol e texto */}			
+			<section class="w-full container flex justify-center">
 
 				<div class="flex flex-col items-center text-center">
 					<p class="w-full font-serif text-charcoal text-3xl sm:text-5xl md:text-6xl font-bold z-10 pt-4 md:pt-16">
@@ -34,10 +43,6 @@ import ReviewCard from "../components/home_page/ReviewCard.astro"
 							Ver Catálogo
 						</a>
 					</div>
-				</div>
-				
-				<div class="hidden md:flex">
-					<ReviewCard></ReviewCard>
 				</div>
 
 			</section>

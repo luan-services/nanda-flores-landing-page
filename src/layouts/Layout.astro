@@ -48,9 +48,7 @@ const imageURL = new URL(image, Astro.site);
 		<meta name="twitter:url" content={canonicalURL} />
 		<meta name="twitter:image" content={imageURL} />
 	</head>
-	<body>
-		<div class="min-h-screen w-full text-shadow-custom-charcoal bg-custom-cream font-lato-sans">	
-			<slot />
-		</div>
+	<body class="min-h-screen w-full text-shadow-custom-charcoal bg-custom-cream font-lato-sans">
+		<slot />
 	</body>
 </html>
