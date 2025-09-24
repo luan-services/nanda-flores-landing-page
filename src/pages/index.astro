@@ -6,6 +6,7 @@ import ReviewCard from "../components/home_page/ReviewCard.astro"
 import { Image } from 'astro:assets';
 import girassol from "../../public/images/girassol-bg.png";
 import Testimonials from '../components/home_page/Testimonials.astro';
+import ProductSection from '../components/home_page/ProductSection.astro';
 
 ---
 
@@ -69,10 +70,17 @@ import Testimonials from '../components/home_page/Testimonials.astro';
 				</a>
 			</section>
 
+			{/* seção melhores produtos */}
+			<section class="flex w-full py-8 justify-center px-4 sm:px-12 lg:px-18">
+				<ProductSection/>
+			</section>
+
 			{/* seção comentários dos clientes */}
-			<section class="pb-16">
+			<section class="pb-8">
 				<Testimonials/>
 			</section>
+
+			
 		</main>
 	</div>
 </Layout>

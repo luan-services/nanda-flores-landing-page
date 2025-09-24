@@ -1,0 +1,39 @@
+---
+// src/components/TopProducts.astro
+import ProductCard from './ProductCard.astro';
+
+const topProducts = [
+    {
+        imageUrl: "/src/assets/images/buque-12-rosas.png", 
+        name: "Buquê 12 Rosas",
+        price: 200.00,
+        rating: 5.0,
+    },
+    {
+        imageUrl: "/src/assets/images/buque-12-girassois.png", 
+        name: "Buquê 12 Girassóis",
+        price: 180.00,
+        rating: 4.9,
+    },
+    {
+        imageUrl: "/src/assets/images/buque-12-variados.png", 
+        name: "Buquê 12 Flores do Campo",
+        price: 160.00,
+        rating: 5.0,
+    },
+];
+---
+<div class="container">
+    <div class="text-center flex flex-col w-full gap-2 pb-8">
+        <p class="font-bold text-custom-slate-gray tracking-widest">PRODUTOS</p>
+        <span class="font-playfair-serif font-bold text-4xl md:text-5xl text-custom-charcoal">
+            Os Mais Vendidos do Mês
+        </span>
+    </div>
+
+    <div class="flex flex-col justify-around items-center lg:flex-row w-full gap-2">
+        {topProducts.map(product => (
+            <ProductCard imageUrl={product.imageUrl} name={product.name} price={product.price} rating={product.rating}/>
+        ))}
+    </div>
+</div>
