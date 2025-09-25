@@ -8,6 +8,7 @@ import { Image } from 'astro:assets';
 import girassol from "../../public/images/girassol-bg.png";
 import Testimonials from '../components/home_page/Testimonials.astro';
 import ProductSection from '../components/home_page/ProductSection.astro';
+import CallToAction from '../components/home_page/CallToAction.astro';
 
 ---
 
@@ -77,10 +78,13 @@ import ProductSection from '../components/home_page/ProductSection.astro';
 			</section>
 
 			{/* seção comentários dos clientes */}
-			<section class="pb-8">
+			<section>
 				<Testimonials/>
 			</section>
 
+			<section>
+				<CallToAction/>
+			</section>
 			
 		</main>
 
