@@ -1,0 +1,21 @@
+---
+---
+<form class="flex flex-col gap-6" name="contact" method="POST">
+    <div class="flex flex-col">
+        <label for="name" class="font-semibold mb-2 text-custom-charcoal">Seu Nome</label>
+        <input type="text" id="name" name="name" required class="px-4 py-3 border border-custom-pastel-yellow rounded-md focus:outline-none focus:ring-2 focus:ring-custom-coral" />
+    </div>
+    <div class="flex flex-col">
+        <label for="email" class="font-semibold mb-2 text-custom-charcoal">Seu Email</label>
+        <input type="email" id="email" name="email" required class="px-4 py-3 border border-custom-pastel-yellow rounded-md focus:outline-none focus:ring-2 focus:ring-custom-coral" />
+    </div>
+    <div class="flex flex-col">
+        <label for="message" class="font-semibold mb-2 text-custom-charcoal">Mensagem</label>
+        <textarea id="message" name="message" rows="5" required class="px-4 py-3 border border-custom-pastel-yellow rounded-md focus:outline-none focus:ring-2 focus:ring-custom-coral"></textarea>
+    </div>
+    <div>
+        <button type="submit" class="w-full bg-custom-charcoal text-white font-bold px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors">
+            Enviar Mensagem
+        </button>
+    </div>
+</form>

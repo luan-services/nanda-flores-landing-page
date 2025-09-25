@@ -1,0 +1,18 @@
+---
+const hours = [
+    { day: "Segunda a Sexta-feira", time: "09:00 - 18:00" },
+    { day: "Sábado", time: "09:00 - 17:00" },
+    { day: "Domingo", time: "Fechado" },
+];
+---
+<div>
+    <h2 class="font-serif text-3xl font-bold text-custom-charcoal pb-4">Horário de Funcionamento</h2>
+    <div class="flex flex-col gap-3 text-custom-slate-gray">
+        {hours.map(item => (
+            <div class="flex justify-between items-center border-b border-custom-pastel-yellow pb-3">
+                <span class="font-semibold">{item.day}</span>
+                <span>{item.time}</span>
+            </div>
+        ))}
+    </div>
+</div>
