@@ -1,12 +1,117 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProductCategorySection from '../components/catalog_page/ProductCategorySection.astro';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const topProducts = [
+    {
+        imageUrl: "/src/assets/images/buque-12-rosas.png", 
+        name: "Buquê de 12 Rosas Vermelhas",
+        price: "200,00",
+    },
+    {
+        imageUrl: "/src/assets/images/buque-12-girassois.png", 
+        name: "Buquê de 12 Girassóis",
+        price: "180,00",
+    },
+    {
+        imageUrl: "/src/assets/images/buque-12-variados.png", 
+        name: "Buquê Flores do Campo",
+        price: "160,00",
+    },
+];
+
+const roseBouquets = [
+    {
+        imageUrl: "/src/assets/images/buque-12-variados.png",
+        name: "Buquê Rosas Brancas",
+        price: "190,00",
+    },
+    {
+        imageUrl: "/src/assets/images/buque-12-variados.png",
+        name: "Buquê Rosas Cor-de-Rosa",
+        price: "195,00",
+    },
+    {
+        imageUrl: "/src/assets/images/buque-12-variados.png",
+        name: "Buquê 12 Rosas Vermelhas",
+        price: "200,00",
+    },
+];
+
+const sunflowerBouquets = [
+    {
+        imageUrl: "/src/assets/images/buque-12-variados.png",
+        name: "Buquê 3 Girassóis",
+        price: "90,00",
+    },
+    {
+        imageUrl: "/src/assets/images/buque-12-variados.png",
+        name: "Buquê 12 Girassóis",
+        price: "180,00",
+    }
+];
+
+const basketsAndGifts = [
+    {
+        imageUrl: "/src/assets/images/buque-12-variados.png",
+        name: "Cesta de Café da Manhã",
+        price: "250,00",
+    },
+    {
+        imageUrl: "/src/assets/images/buque-12-variados.png",
+        name: "Cesta de Chocolates e Flores",
+        price: "220,00",
+    }
+];
 
 ---
 
 <Layout title="Catálogo de Buquês e Arranjos Florais - Nanda Flores" description="Explore nosso catálogo completo de buquês de rosas, arranjos florais, orquídeas e muito mais. Encontre o presente perfeito para qualquer ocasião. Veja as opções!">
-	<Header/>
-	<main class="container">
-		catalog
-	</main>
+    
+        <Header/>
+        <main class="w-full flex flex-col items-center">
+
+            <section class="w-full flex justify-center text-center py-8 sm:py-12">
+                <div class="flex flex-col items-center gap-4">
+                    <p class="font-bold text-custom-slate-gray tracking-widest">NOSSO CATÁLOGO</p>
+                    <h1 class="font-playfair-serif text-charcoal text-4xl sm:text-5xl md:text-6xl font-bold">
+                        Flores Para Todas as Ocasiões
+                    </h1>
+                </div>
+            </section>
+            
+            <ProductCategorySection title="Destaques do Mês" products={topProducts} />
+
+            <ProductCategorySection title="Buquês com Rosas" products={roseBouquets} />
+
+            <ProductCategorySection title="Buquês com Girassóis" products={sunflowerBouquets} />
+
+            <ProductCategorySection title="Cestas e Mimos" products={basketsAndGifts} />
+
+            <section class="w-full flex justify-center py-20 sm:py-28 px-4">
+                <div class="container flex flex-col items-center text-center gap-6">
+                    <h2 class="font-playfair-serif text-4xl md:text-5xl font-bold text-custom-charcoal">
+                        Não encontrou o que procurava?
+                    </h2>
+                    <p class="text-lg text-custom-slate-gray max-w-2xl">
+                        Fale conosco! Criamos arranjos personalizados para tornar seu momento ainda mais especial.
+                    </p>
+                    <a 
+                        href="https://wa.me/5524999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20personalizado."
+                        target="_blank"
+                        class="flex items-center gap-3 bg-green-500 text-white font-bold text-md px-8 py-3 rounded-full hover:bg-green-600 transition-colors duration-300"
+                    >
+                        <FontAwesomeIcon icon={faWhatsapp} width={24}></FontAwesomeIcon>
+                        Contacte-nos no WhatsApp
+                    </a>
+                </div>
+            </section>
+            
+        </main>
+    
+    <Footer/>
 </Layout>

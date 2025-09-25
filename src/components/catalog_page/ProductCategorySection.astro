@@ -1,0 +1,31 @@
+---
+import CatalogProductCard from './CatalogProductCard.astro';
+
+interface Product {
+  imageUrl: string;
+  name: string;
+  price: string;
+}
+
+const { title, products } = Astro.props;
+---
+
+<section class="w-full flex justify-center py-12 sm:py-16">
+    <div class="container px-4">
+        <div class="text-center flex flex-col w-full gap-2 pb-12">
+            <h2 class="font-playfair-serif font-bold text-4xl md:text-5xl text-custom-charcoal">
+                {title}
+            </h2>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8">
+            {products.map((product: Product) => (
+                <CatalogProductCard 
+                    imageUrl={product.imageUrl} 
+                    name={product.name} 
+                    price={product.price} 
+                />
+            ))}
+        </div>
+    </div>
+</section>

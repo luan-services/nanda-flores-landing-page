@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const { imageUrl, name, price } = Astro.props;
+
+const phoneNumber = "552499999999x"; 
+
+const message = encodeURIComponent(`Olá! Tenho interesse no produto: ${name} (R$ ${price}). Gostaria de encomendar.`);
+
+const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
+---
+
+<div class="flex flex-col w-full max-w-sm overflow-hidden">
+    
+    <div class="flex-shrink-0">
+        <img class="w-full h-80 object-cover" src={imageUrl} alt={`Imagem de ${name}`} />
+    </div>
+
+    <div class="flex flex-col flex-grow p-6 text-center">
+        <h3 class="text-2xl font-bold font-playfair-serif text-custom-charcoal">{name}</h3>
+        
+        <div class="pt-4 h-full items-end flex">
+             <a href={whatsappLink} target="_blank" class="flex w-full items-center justify-center gap-3 bg-custom-charcoal text-white font-semibold px-6 py-3 rounded-full hover:bg-opacity-90 transition-colors duration-300">
+                <FontAwesomeIcon icon={faWhatsapp} width={20}></FontAwesomeIcon>
+                Encomendar
+            </a>
+        </div>
+    </div>
+</div>
