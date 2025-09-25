@@ -1,0 +1,75 @@
+---
+// src/components/Footer.astro
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Flower} from 'lucide-react';
+import { faInstagram, faFacebook, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
+
+// --- DADOS DO RODAPÉ ---
+// Edite aqui para mudar os links facilmente
+const navLinks = [
+  { href: "/", name: "Início" },
+  { href: "/catalog", name: "Catálogo" },
+  { href: "/how-to-reach", name: "Contato" },
+];
+
+const socialLinks = [
+  { href: "#", name: "Instagram", icon: faInstagram },
+  { href: "#", name: "Facebook", icon: faFacebook},
+  { href: "#", name: "WhatsApp", icon: faWhatsapp},
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="w-full bg-white border-t border-custom-pastel-yellow text-custom-charcoal py-18">
+    <div class="container mx-auto px-8 md:px-20 xl:px-40">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        
+        <div class="md:col-span-2 lg:col-span-1 sm:pb-6">
+            <a href="/" class="flex items-center gap-2 text-2xl font-bold text-charcoal font-playfair-serif mb-4">
+                <span class="text-custom-coral"><Flower size={28} /></span>
+                Nanda Flores
+            </a>
+
+            <p class="text-slate-gray max-w-xs">
+                Criando arranjos únicos que transformam emoções em presentes inesquecíveis.
+            </p>
+
+            <div class="flex gap-2 py-2 items-center text-custom-coral">
+                {socialLinks.map(social => (
+                    <a  href={social.href} class="w-10 h-10 bg-coral/20 rounded-full flex items-center justify-center text-coral hover:bg-coral hover:text-white transition-colors">
+                    
+                    <FontAwesomeIcon icon={social.icon} width={25}></FontAwesomeIcon>
+                    </a>
+                ))}
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-2 ">
+            <h3 class="font-bold text-lg text-charcoal mb-4">Navegação</h3>
+            {navLinks.map(link => (
+                <a href={link.href} class="text-custom-slate-gray hover:text-custom-coral transition-colors">
+                    {link.name}
+                </a>
+            ))}
+        </div>
+        
+        <div class="flex flex-col gap-2 pb-6">
+            <h3 class="font-bold text-lg text-charcoal mb-4">Nossas Flores</h3>
+                <a href="/catalog" class="text-custom-slate-gray hover:text-custom-coral transition-colors">Buquês</a>
+                <a href="/catalog" class="text-custom-slate-gray hover:text-custom-coral transition-colors">Arranjos</a>
+                <a href="/catalog" class="text-custom-slate-gray hover:text-custom-coral transition-colors">Cestas</a>
+        </div>
+
+        </div>
+
+        <div class="border-t border-custom-coral pt-8 flex flex-col sm:flex-row justify-between items-center text-slate-gray text-sm">
+        
+            <p>&copy; {currentYear} Nanda Flores. Todos os direitos reservados.</p>
+        <p class="mt-2 sm:mt-0">Feito por Luan Peixoto</p>
+        </div>
+
+    </div>
+</footer>
