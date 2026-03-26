@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import { Font } from 'astro:assets';
 
 interface Props {
 	title: string;
@@ -16,6 +17,8 @@ const imageURL = new URL(image, Astro.site);
 <!doctype html>
 <html lang="pt-br">
 	<head>
+		<Font cssVariable="--font-noto-sans" />
+		<Font cssVariable="--font-playfair-display" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 
@@ -48,7 +51,8 @@ const imageURL = new URL(image, Astro.site);
 		<meta name="twitter:url" content={canonicalURL} />
 		<meta name="twitter:image" content={imageURL} />
 	</head>
-	<body class="min-h-screen w-full text-shadow-custom-charcoal bg-custom-cream font-lato-sans">
+	<body class="min-h-screen w-full text-shadow-custom-charcoal bg-custom-cream font-noto-sans">
+		<h1> AAAAAAAAAAAAaa</h1>
 		<slot />
 	</body>
 </html>

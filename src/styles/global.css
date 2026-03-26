@@ -1,43 +1,6 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "PlayFair Display";
-  font-weight: 400 900;
-  src: url("../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf"), format("ttf");
-}
-
-@font-face {
-  font-family: "Lato";
-  font-weight: 400;
-  src: url("../assets/fonts/Lato-Regular.ttf"), format("ttf");
-}
-
-@font-face {
-  font-family: "Lato";
-  font-weight: 700;
-  src: url("../assets/fonts/Lato-Bold.ttf"), format("ttf");
-}
-
 @theme {
-  --font-lato-sans: "Lato", sans-serif;
-  --font-playfair-serif: "Playfair Display", sans-serif;
+	--font-noto-sans: var(--font-noto-sans), sans-serif;
+	--font-playfair-display: var(--font-playfair-display), serif;
 }
-
-@theme {
-    --color-custom-cream: #FFFBEB;
-    --color-custom-pastel-yellow: #fef0c3;
-    --color-custom-soft-amber: #FDE68A;
-    --color-custom-charcoal: #383838;
-    --color-custom-slate-gray: #5A5A5A;
-    --color-custom-pale-yellow: #FDF4D7;
-    --color-custom-coral: #ffb86a;
-}
-
-/*
-Fundo Principal	Creme
-Cards / Fundo Secundário	
-Destaque / Hover	
-Texto Principal	Carvão	
-Texto Secundário	
-Bordas / Divisores
-*/
