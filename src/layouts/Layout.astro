@@ -3,15 +3,21 @@ import '../styles/global.css'
 import { Font } from 'astro:assets';
 
 interface Props {
-	title: string;
-	description: string;
+	title?: string;
+	description?: string;
+	socialMediaDescription?: string;
 	image?: string;
 }
 
-const { title, description, image = "/default_social_image.png" }:Props = Astro.props; // se a página não passar uma imagem específica, usa a imagem default 'default-social-image.png' 
+const { 
+	title = "Nanda Flores - Buquês, Arranjos e Cestas", 
+	description = "Floricultura em Angra dos Reis. A Nanda Flores cria lindos buquês, arranjos e cestas para todas as ocasiões. Surpreenda quem você ama com os presentes feitos com profissionalismo.", 
+	socialMediaDescription = "A Nanda Flores cria lindos buquês, arranjos e cestas para todas as ocasiões. Surpreenda quem você ama com presentes feitos com profissionalismo. ",
+	image = "/og-image.jpg" 
+}:Props = Astro.props; /* if you don't pass a image prop on page.astro, it uses '/og-image.jpg', usually a good size for an og-image is 1200x630, assume the edges might be cut sometimes and the image get squared */
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site); // cria um url canônico para a página específica (https://www.meusite.com.br)
-const imageURL = new URL(image, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site); /* unifies pathname ("/about", "/contact") of the current page with the page main url on astro.config.mjs (https://www.nandaflores.com.br/) */
+const imageURL = new URL(image, Astro.site); 
 ---
 
 <!doctype html>
@@ -19,40 +25,41 @@ const imageURL = new URL(image, Astro.site);
 	<head>
 		<Font cssVariable="--font-noto-sans" />
 		<Font cssVariable="--font-playfair-display" />
+		
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 
-		{/* define o ícone do site */}
-		<link rel="icon" type="image/png" href="/nanda-flores-icon.png" />
+		{/* website icon */}
+		<link rel="icon" type="image/png" href="/icon.svg" />
 
-		{/* a meta tag generator serve para definir a versão atual do Astro. Astro.generator retorna algo como “Astro v4.0.0” */}
+		{/* generator defines astro current version, Astro.generator returns something like “Astro v4.0.0” */}
 		<meta name="generator" content={Astro.generator} />
 
-		{/* tags de descrição e título da página, que vem das props. */}
 		<title>{title}</title>
 		<meta name="description" content={description} />
 
-		{/* meta-tag que define a url canônica da página atual, ela diz ao google que o canonicalURL é a url oficial da página atual, juntando qualquer variação www., https:, http: em uma versão única final que vai ser mostrada nos resultados das buscas “https://www.meu-website.com.br” */}
+		{/* this tells the google search engine that 'https://www.nandaflores.com.br/_sectionname_' is the oficial current 
+		page url, this way even if users access the same page by any other links (http, without www, etc), google will 
+		consider they are acessing the canonical url instead */}
 		<link rel="canonical" href={canonicalURL} />
 
-		{/* meta-tags que definem como a página vai aparecer quando compartilhada em redes sociais, aquele pequeno blob com titulo, foto, link, etc. */}
+		{/* opengraph meta-tags for social media (the card when sharing links) */}
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
+		<meta property="og:description" content={socialMediaDescription} />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:image" content={imageURL} />
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="Nanda Flores" /> 
 		<meta property="og:locale" content="pt_BR" /> 
 		
-		{/* meta-tags que definem como a página vai aparecer quando compartilhada no twitter, aquele pequeno blob com titulo, foto, link, etc. */}
+		{/* opengraph meta-tags for twitter only */}
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
+		<meta name="twitter:description" content={socialMediaDescription} />
 		<meta name="twitter:url" content={canonicalURL} />
 		<meta name="twitter:image" content={imageURL} />
 	</head>
-	<body class="min-h-screen w-full text-shadow-custom-charcoal bg-custom-cream font-noto-sans">
-		<h1> AAAAAAAAAAAAaa</h1>
+	<body class="font-noto-sans min-h-screen w-full antialiased">
 		<slot />
 	</body>
 </html>
