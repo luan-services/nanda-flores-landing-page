@@ -8,6 +8,6 @@ const props = Astro.props as Props;
 /* must use client:visible on the component whenever it needs do use Javascript */
 ---
 
-<ReactButtonLink client:visible {...props}>
+<ReactButtonLink {...props}>
   <slot />
 </ReactButtonLink>

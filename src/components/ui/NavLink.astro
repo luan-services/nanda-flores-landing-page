@@ -1,0 +1,13 @@
+---
+import { NavLink as ReactNavLink } from "./NavLink";
+import type { ComponentProps } from "react";
+
+type Props = ComponentProps<typeof ReactNavLink>;
+const props = Astro.props as Props;
+
+/* must use client:visible on the component whenever it needs do use Javascript */
+---
+
+<ReactNavLink {...props}>
+  <slot />
+</ReactNavLink>
