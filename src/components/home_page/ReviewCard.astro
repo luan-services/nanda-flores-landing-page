@@ -9,7 +9,7 @@ interface Props {
 const {title, description, margin = ''}:Props = Astro.props
 ---
 
-<div class=`p-3 max-w-60 gap-4 ${margin}`>
+<div class=`p-3 max-w-60 gap-4 border-2 rounded-lg ${margin}`>
 	<p class="font-bold text-custom-charcoal">{title}</p>
     <span class="flex text-sm text-custom-slate-gray">{description}</span>
 </div>

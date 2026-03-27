@@ -146,7 +146,7 @@
 }
 
 /* dark mode override */
-@media (prefers-color-scheme: dark ) {
+@media (prefers-color-scheme: s ) {
 	:root {
 		/* css for default bg */
 		--background-default: var(--neutral-900); 
