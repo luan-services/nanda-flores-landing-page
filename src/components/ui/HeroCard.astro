@@ -1,0 +1,15 @@
+---
+interface HeroProps {
+	title: string;
+    className?: string;
+}
+
+const {title, className = ""} = Astro.props as HeroProps;
+---
+
+<div class=`px-4 py-2 lg:py-3 lg:px-6 max-w-56 md:max-w-60 lg:max-w-72 bg-card border-1 border-primary-border rounded-lg ${className}`>
+	<h3 class="text-primary-fg text-xs md:text-sm lg:text-base font-medium pb-0.5">{title}</h3>
+    <p class="text-xs lg:text-sm text-muted-fg flex text-custom-slate-gray">
+        <slot/>
+    </p>
+</div>

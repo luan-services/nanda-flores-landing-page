@@ -15,17 +15,11 @@ import HeroSection from '../components/landing-page/HeroSection.astro';
 <Layout>
 	<Header/>
 	{/* gradient que vem do topo da página, precisa ficar antes do header */}
-	<div class="absolute top-0 left-1/2 -translate-x-1/2 h-100 sm:h-150 w-full max-w-160 bg-gradient-to-b from-custom-soft-amber/60 to-transparent"/>
+	<div class="absolute top-0 left-1/2 -translate-x-1/2 h-100 sm:h-150 w-full max-w-88 sm:max-w-108 md:max-w-160 bg-gradient-to-b from-[var(--primary-100)] to-transparent"/>
 	
 
 	<main class="w-full flex flex-col items-center text-default-fg">
 		<HeroSection/>
-
-		{/* seção de comentários pro mobile */}
-		<section class="flex flex-col sm:flex-row justify-around items-center sm:items-start gap-2 lg:hidden text-center container pt-4 md:pt-8">
-			<ReviewCard title="Flores Frescas" description="Nossas flores são colhidas constantemente para garantir que estejam frescas e na melhor qualidade."></ReviewCard>
-			<ReviewCard title="Arranjos Artísticos" description="Criamos buquês únicos, artísticos e belos, para qualquer dia ou ocasião especial."></ReviewCard>
-		</section>
 
 		{/* seção chamativa */}
 		<section class="container justify-around items-center flex-col gap-2 sm:gap-0 sm:flex-row flex py-4 sm:py-16">
