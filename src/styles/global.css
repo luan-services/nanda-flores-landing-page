@@ -79,7 +79,7 @@
 :root {
 	/* css for default bg */
 	--background-default: var(--neutral-50); 
-	--background-primary: var(--primary-50);  /* lighter primary colors for badges, navlink, etc background */
+	--background-primary: var(--primary-100);  /* lighter primary colors for badges, navlink, etc background */
 	
 	--background-neutral: var(--neutral-0);  /* full white / dark */
 	--background-footer: var(--neutral-900);

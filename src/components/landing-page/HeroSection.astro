@@ -2,14 +2,14 @@
 import HeroCard from "../ui/HeroCard.astro"
 import ButtonLink from "../ui/ButtonLink.astro"
 ---  
-<section class="w-full relative min-h-128 sm:h-188 md:h-236 lg:h-316 max-w-384 flex flex-col py-0 sm:py-12">
+<section id="hero" class="w-full relative min-h-128 sm:h-188 md:h-236 lg:h-316 max-w-384 flex flex-col pt-16 sm:pt-24 py-0 sm:py-12">
 
     <h1 class="relative font-medium text-3xl sm:text-4xl lg:text-6xl font-playfair-display text-center">
         Um Paraíso de Flores<br>Perto <span class="text-primary-fg">de Você</span>
     </h1>
 
     <div class="absolute inset-0 pointer-events-none bg-[url('/images/girassol-bg.png')]
-        bg-no-repeat bg-top mt-15 sm:mt-0 sm:bg-center bg-[length:248px] sm:bg-[length:324px] md:bg-[length:440px] lg:bg-[length:600px]">
+        bg-no-repeat bg-top mt-31 sm:mt-24 md:mt-22 sm:bg-center bg-[length:248px] sm:bg-[length:324px] md:bg-[length:440px] lg:bg-[length:600px]">
     </div>
 
     <div class="w-full flex flex-col items-center justify-center z-10 px-4 sm:px-8 lg:px-16">
@@ -22,18 +22,19 @@ import ButtonLink from "../ui/ButtonLink.astro"
             </p>
         </div>
 
-        <div class="absolute inset-0 bottom-120 sm:bottom-88 md:bottom-120 flex items-center justify-center z-10">
+        <div class="absolute inset-0 bottom-120 sm:bottom-36 md:bottom-72! lg:bottom-108! flex items-center justify-center z-10">
             <ButtonLink 
                 href="#"
-                className="lg:h-12 lg:px-8 lg:text-base bg-default border-2! border-primary-accent-border!"
+                className="lg:h-12 lg:px-8 text-xs! md:text-sm! lg:text-base! bg-default border-2! border-primary-accent-border!"
                 variant="ghost"
+                size="md"
                 pill="true"
             >
                 Ver catálogo
             </ButtonLink>
         </div>
 
-    <div class="flex gap-3 flex-col sm:flex-row w-full items-center justify-between pt-32 sm:pt-16 pb-3 sm:pb-0">
+    <div class="flex gap-3 flex-col sm:flex-row w-full items-center justify-between pt-32 sm:pt-40 pb-3 sm:pb-0">
         <HeroCard 
             title="Flores Frescas"
         >

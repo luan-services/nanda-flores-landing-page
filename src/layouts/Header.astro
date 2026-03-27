@@ -1,0 +1,61 @@
+---
+import NavLink from "../components/ui/NavLink.astro";
+
+
+---
+
+<header class="flex fixed w-full items-center justify-between h-12 backdrop-blur-xs z-50">
+    <div class="flex w-full max-w-384 items-center px-4 sm:px-8 md:px-12 lg:px-16 overflow-x-auto no-scrollbar">
+        <nav aria-label="Navegação principal esquerda" class="flex order-2 md:order-1 md:flex-1 justify-center gap-x-1 shrink-0 text-xs sm:text-sm pt-0.5">
+            <NavLink 
+                className="px-1! sm:px-2! sm:text-sm!"
+                href="/#hero"
+                variant="primary"
+                pill="true"
+                size="sm"
+            >
+                Início
+            </NavLink>
+            <NavLink 
+                className="px-1! sm:px-2! sm:text-sm!"
+                href="/#catalog"
+                variant="primary"
+                pill="true"
+                size="sm"
+            >
+                Catálogo
+            </NavLink>
+        </nav>
+
+        <a href="/#hero+" class="flex order-1 md:order-2 items-center gap-2 shrink-0 mr-auto md:mr-0">
+            <span class="hidden sm:block h-[1px] w-6 md:w-8 bg-default-fg rounded-full"></span>
+            
+            <span class="text-lg sm:text-2xl font-semibold text-default-fg font-playfair-display">
+                Nanda Flores
+            </span>
+            
+            <span class="hidden sm:block h-[1px] w-6 md:w-8 bg-default-fg rounded-full"></span>
+        </a>
+
+        <nav aria-label="Navegação principal direita" class="flex order-3 md:order-3 md:flex-1 gap-x-1 justify-center shrink-0 text-xs sm:text-sm ml-1 md:ml-0 pt-0.5">
+            <NavLink 
+                className="px-1! sm:px-2! sm:text-sm!"
+                href="/#location"
+                variant="primary"
+                pill="true"
+                size="sm"
+            >
+                Localização
+            </NavLink>
+            <NavLink 
+                className="hidden! sm:flex! px-1! sm:px-2! sm:text-sm!"
+                href="/#other-services"
+                variant="primary"
+                pill="true"
+                size="sm"
+            >
+                Outros Serviços
+            </NavLink>
+        </nav>
+    </div>
+</header>
