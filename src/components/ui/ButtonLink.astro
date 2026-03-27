@@ -1,0 +1,13 @@
+---
+import { ButtonLink as ReactButtonLink } from "./ButtonLink";
+import type { ComponentProps } from "react";
+
+type Props = ComponentProps<typeof ReactButtonLink>;
+const props = Astro.props as Props;
+
+/* must use client:visible on the component whenever it needs do use Javascript */
+---
+
+<ReactButtonLink client:visible {...props}>
+  <slot />
+</ReactButtonLink>

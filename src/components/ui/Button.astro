@@ -1,0 +1,13 @@
+---
+import { Button as ReactButton } from "./Button";
+import type { ComponentProps } from "react";
+
+type Props = ComponentProps<typeof ReactButton>;
+const props = Astro.props as Props;
+
+/* must use client:visible on the component whenever it needs do use Javascript */
+---
+
+<ReactButton {...props}>
+  <slot />
+</ReactButton>
