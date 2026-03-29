@@ -25,8 +25,8 @@ import ButtonLink from "../ui/ButtonLink.astro"
         <div class="absolute inset-0 bottom-120 sm:bottom-36 md:bottom-72! lg:bottom-108! flex items-center justify-center z-10">
             <ButtonLink 
                 href="#"
-                className="lg:h-12 lg:px-8 text-xs! md:text-sm! lg:text-base! bg-default border-2! border-primary-accent-border!"
-                variant="ghost"
+                className="bg-[var(--secondary-700)]! hover:opacity-100! hover:brightness-110! max-w-40! w-full! border-3 border-[var(--secondary-300)]!"
+                variant="primary"
                 size="md"
                 pill="true"
             >
@@ -34,34 +34,34 @@ import ButtonLink from "../ui/ButtonLink.astro"
             </ButtonLink>
         </div>
 
-    <div class="flex gap-3 flex-col sm:flex-row w-full items-center justify-between pt-32 sm:pt-40 pb-3 sm:pb-0">
-        <HeroCard 
-            title="Flores Frescas"
-        >
-            Nossas flores são colhidas constantemente para garantir que estejam frescas e na melhor qualidade.
-        </HeroCard>
-        
-        <HeroCard 
-            title="Material Sustentável"
-        >
-            Nossa loja é comprometida com práticas ecológicas, desde colheita ao empacotamento dos buquês.
-        </HeroCard>
+        <div class="flex gap-3 flex-col sm:flex-row w-full items-center justify-between pt-28 sm:pt-40 pb-3 sm:pb-0">
+            <HeroCard 
+                title="Flores Frescas"
+            >
+                Nossas flores são colhidas constantemente para garantir que estejam frescas e na melhor qualidade.
+            </HeroCard>
+            
+            <HeroCard 
+                title="Material Sustentável"
+            >
+                Nossa loja é comprometida com práticas ecológicas, desde colheita ao empacotamento dos buquês.
+            </HeroCard>
+        </div>
+    
+        <div class="flex gap-3 flex-col sm:flex-row w-full items-center justify-between pt-0 sm:pt-16">
+            <HeroCard 
+                title="Arranjos Artísticos"
+            >
+                Criamos buquês únicos, artísticos e belos, para qualquer dia ou ocasião especial.
+            </HeroCard>
+            
+            <HeroCard 
+                title="Ouvimos os Clientes"
+            >
+                Sua satisfação é nossa maior prioridade, fazemos de tudo para entregar os melhores produtos à você.
+            </HeroCard>
+        </div>
     </div>
-    
-<div class="flex gap-3 flex-col sm:flex-row w-full items-center justify-between pt-0 sm:pt-16">
-    <HeroCard 
-        title="Arranjos Artísticos"
-    >
-        Criamos buquês únicos, artísticos e belos, para qualquer dia ou ocasião especial.
-    </HeroCard>
-    
-    <HeroCard 
-        title="Ouvimos os Clientes"
-    >
-        Sua satisfação é nossa maior prioridade, fazemos de tudo para entregar os melhores produtos à você.
-    </HeroCard>
-</div>
-
 
 </section>
 
