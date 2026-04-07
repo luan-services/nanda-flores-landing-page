@@ -8,22 +8,17 @@ import Testimonials from '../components/home_page/Testimonials.astro';
 import ProductSection from '../components/home_page/ProductSection.astro';
 import CallToAction from '../components/home_page/CallToAction.astro';
 import HeroSection from '../components/landing-page/HeroSection.astro';
+import CtaSection from '../components/landing-page/CtaSection.astro';
 
 ---
 
 <Layout>
 	<Header />
 	<div class="absolute top-0 left-1/2 -translate-x-1/2 h-100 sm:h-150 w-full max-w-88 sm:max-w-108 md:max-w-160 bg-gradient-to-b from-[var(--primary-100)] to-transparent"/>
-	<main class="w-full flex flex-col items-center text-default-fg">
+	<main class="w-full flex flex-col items-center text-default-fg bg-neutral">
 		<HeroSection />
 
-		{/* seção chamativa */}
-		<section class="container justify-around items-center flex-col gap-2 sm:gap-0 sm:flex-row flex py-4 sm:py-16">
-			<span class="font-playfair-serif text-2xl text-center sm:text-start sm:text-4xl md:text-5xl font-bold">Descubra Nossos<br>Melhores Produtos</span>
-			<a href="/catalog" class="text-custom-slate-gray border-custom-slate-gray font-black text-sm px-4 py-2 md:py-3 md:px-8 rounded-full hover:brightness-90 transition duration-300 border-3">
-				Acesse Nosso Catálogo
-			</a>
-		</section>
+		<CtaSection />
 
 		{/* seção melhores produtos */}
 		<section class="flex w-full py-8 justify-center px-4 sm:px-12 lg:px-18">
@@ -40,8 +35,6 @@ import HeroSection from '../components/landing-page/HeroSection.astro';
 		</section>
 		
 	</main>
-
-	
 	<Footer/>
 </Layout>
 

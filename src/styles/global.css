@@ -148,7 +148,7 @@
     --bg-btn-ghost: transparent;
     --fg-btn-ghost: var(--neutral-900);
 	
-	--bg-btn-accent: var(--primary-50);
+	--bg-btn-accent: var(--primary-100);
     --fg-btn-accent: var(--primary-500);
 	
 	--bg-btn-accent-default: var(--neutral-100);
